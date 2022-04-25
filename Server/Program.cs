@@ -67,6 +67,9 @@ class Program{
             string target = content[1].TrimEnd().TrimStart();
             string replacement = content[2].TrimEnd().TrimStart();
 
+            if(target.Length != 1 && replacement.Length != 1){
+                return Encoding.UTF8.GetBytes("1;target and replacement not a single character");
+            }
             if(target.Length != 1){
                 return Encoding.UTF8.GetBytes("1;target not a single character");
             }
